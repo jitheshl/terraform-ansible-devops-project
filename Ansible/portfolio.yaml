@@ -18,6 +18,10 @@
       ansible.builtin.copy:
         src: ../Html/index.html
         dest: /usr/share/nginx/html/index.html
-        owner: root
-        group: root
-        mode: '0644'
+        # owner: root
+        # group: root
+        # mode: '0644'
+    - name: nginx starting
+      ansible.builtin.service:
+        name: nginx
+        state: started
