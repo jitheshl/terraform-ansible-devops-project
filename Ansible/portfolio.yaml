@@ -1,7 +1,7 @@
 - name : terraform-ansible-portfolio-project
   hosts : portfolio
   become: yes
-  task:
+  tasks:
     - name: Installing nginx
       ansible.builtin.package:
         name: nginx
@@ -14,7 +14,7 @@
       ansible.builtin.file:
         path: /usr/share/nginx/html/index.html
         state: touch
-    - name: Copy file with owner and permissions
-      ansible.builtin.copy:
-        src: /srv/myfiles/foo.conf
-        dest: /etc/foo.conf
+    # - name: Copy file with owner and permissions
+    #   ansible.builtin.copy:
+    #     src: /srv/myfiles/foo.conf
+    #     dest: /etc/foo.conf
