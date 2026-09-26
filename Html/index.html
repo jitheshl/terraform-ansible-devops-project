@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lakkala Jithesh | Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f8fafc;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+
+        /* NAVBAR */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: #0f172a;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        nav ul li a:hover {
+            color: #38bdf8;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 600px;
+            padding: 100px 8%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+            background: linear-gradient(135deg, #0f172a, #1e3a8a);
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 650px;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            margin-bottom: 10px;
+        }
+
+        .hero h2 {
+            font-size: 28px;
+            color: #38bdf8;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            color: #cbd5e1;
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 25px;
+            border-radius: 7px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .primary {
+            background: #38bdf8;
+            color: #082f49;
+        }
+
+        .secondary {
+            border: 1px solid #94a3b8;
+            color: white;
+        }
+
+        .primary:hover {
+            background: #7dd3fc;
+        }
+
+        .secondary:hover {
+            background: white;
+            color: #0f172a;
+        }
+
+        /* HERO CARD */
+
+        .hero-card {
+            width: 320px;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 30px;
+            border-radius: 18px;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-card h3 {
+            margin-bottom: 15px;
+            color: #38bdf8;
+        }
+
+        .hero-card p {
+            margin: 8px 0;
+            font-size: 15px;
+        }
+
+        /* GENERAL SECTION */
+
+        section {
+            padding: 80px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            color: #0f172a;
+        }
+
+        .section-title p {
+            color: #64748b;
+            margin-top: 8px;
+        }
+
+        /* ABOUT */
+
+        .about {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .about p {
+            color: #475569;
+            font-size: 17px;
+        }
+
+        /* SKILLS */
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .skill-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .skill-card h3 {
+            color: #2563eb;
+            margin-bottom: 12px;
+        }
+
+        .skill-card p {
+            color: #64748b;
+        }
+
+        /* PROJECTS */
+
+        .projects {
+            background: #eef4ff;
+        }
+
+        .project-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .project-card {
+            background: white;
+            padding: 30px;
+            border-radius: 14px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .project-card h3 {
+            color: #0f172a;
+            margin-bottom: 10px;
+        }
+
+        .project-card p {
+            color: #64748b;
+            margin-bottom: 15px;
+        }
+
+        .tech {
+            color: #2563eb;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        /* EXPERIENCE */
+
+        .experience-card {
+            max-width: 900px;
+            margin: 0 auto 25px;
+            background: white;
+            padding: 30px;
+            border-left: 5px solid #2563eb;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .experience-card h3 {
+            margin-bottom: 5px;
+        }
+
+        .experience-card .date {
+            color: #2563eb;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        /* CERTIFICATES */
+
+        .certificates {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .certificate {
+            background: white;
+            padding: 15px 22px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+
+        /* CONTACT */
+
+        .contact {
+            background: #0f172a;
+            color: white;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .contact p {
+            color: #cbd5e1;
+            margin: 8px;
+        }
+
+        .contact a {
+            color: #38bdf8;
+            text-decoration: none;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #020617;
+            color: #94a3b8;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 800px) {
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 70px 6%;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .hero h2 {
+                font-size: 23px;
+            }
+
+            .buttons {
+                justify-content: center;
+            }
+
+            .hero-card {
+                width: 100%;
+                max-width: 350px;
+            }
+
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+
+            .project-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            section {
+                padding: 60px 6%;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .section-title h2 {
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<nav>
+    <div class="logo">Jithesh</div>
+
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <h1>Hi, I'm Jithesh</h1>
+
+        <h2>Web Developer & DevOps Enthusiast</h2>
+
+        <p>
+            I build responsive web applications and explore cloud
+            infrastructure, automation, and DevOps technologies using
+            AWS, Linux, Ansible and modern web technologies.
+        </p>
+
+        <div class="buttons">
+
+            <a href="#projects" class="btn primary">
+                View Projects
+            </a>
+
+            <a href="https://github.com/jitheshl"
+               target="_blank"
+               class="btn secondary">
+                GitHub
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="hero-card">
+
+        <h3>Tech Focus</h3>
+
+        <p>☁️ AWS</p>
+        <p>⚙️ Ansible</p>
+        <p>🐧 Linux</p>
+        <p>💻 JavaScript</p>
+        <p>🌐 Node.js</p>
+        <p>🗄️ MongoDB</p>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+    <div class="section-title">
+        <h2>About Me</h2>
+        <p>A little about my journey</p>
+    </div>
+
+    <div class="about">
+
+        <p>
+            I am Lakkala Jithesh, a developer interested in web development,
+            cloud computing and DevOps. I enjoy building full-stack
+            applications and working with cloud infrastructure.
+        </p>
+
+        <br>
+
+        <p>
+            I have worked on projects involving React.js, Node.js,
+            Express.js, MongoDB, AWS EC2, Linux, Shell Scripting,
+            Ansible and Nginx. I am continuously learning and improving
+            my development and infrastructure automation skills.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+    <div class="section-title">
+        <h2>Skills</h2>
+        <p>Technologies and tools I work with</p>
+    </div>
+
+    <div class="skills-container">
+
+        <div class="skill-card">
+            <h3>Languages</h3>
+            <p>
+                C, C++, Java, JavaScript, Python, Shell Scripting
+            </p>
+        </div>
+
+        <div class="skill-card">
+            <h3>Web Development</h3>
+            <p>
+                HTML, CSS, Node.js, Express.js, REST APIs
+            </p>
+        </div>
+
+        <div class="skill-card">
+            <h3>Databases</h3>
+            <p>
+                MongoDB, PostgreSQL, MySQL
+            </p>
+        </div>
+
+        <div class="skill-card">
+            <h3>Cloud & DevOps</h3>
+            <p>
+                AWS, Linux, Ansible, Nginx
+            </p>
+        </div>
+
+        <div class="skill-card">
+            <h3>Tools</h3>
+            <p>
+                Git, GitHub, REST APIs, Socket.io
+            </p>
+        </div>
+
+        <div class="skill-card">
+            <h3>Soft Skills</h3>
+            <p>
+                Problem Solving, Team Player,
+                Project Management, Adaptability
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PROJECTS -->
+
+<section class="projects" id="projects">
+
+    <div class="section-title">
+
+        <h2>Projects</h2>
+
+        <p>
+            Some of the projects I have worked on
+        </p>
+
+    </div>
+
+
+    <div class="project-container">
+
+
+        <div class="project-card">
+
+            <h3>Smart Alumni Mentoring System</h3>
+
+            <p>
+                A full-stack platform connecting students with alumni
+                mentors for career guidance, professional advice and
+                knowledge sharing.
+            </p>
+
+            <p>
+                Implemented mentorship requests, real-time chat,
+                notifications, job postings, applications and
+                role-based authentication.
+            </p>
+
+            <div class="tech">
+                Express.js · MongoDB · JavaScript · JWT · Socket.io
+            </div>
+
+            <br>
+
+            <a href="https://github.com/jitheshl"
+               target="_blank"
+               class="btn primary">
+                GitHub
+            </a>
+
+        </div>
+
+
+        <div class="project-card">
+
+            <h3>3-Tier Expense Management System</h3>
+
+            <p>
+                Deployed a 3-tier Expense Management application on
+                AWS EC2 using separate infrastructure for frontend,
+                backend and database layers.
+            </p>
+
+            <p>
+                Automated server provisioning and application
+                deployment using Shell Scripting and Ansible.
+                Configured Nginx as a reverse proxy and managed
+                Linux services.
+            </p>
+
+            <div class="tech">
+                AWS EC2 · Linux · Ansible · Shell · MySQL · Node.js · Nginx
+            </div>
+
+            <br>
+
+            <a href="https://github.com/jitheshl"
+               target="_blank"
+               class="btn primary">
+                GitHub
+            </a>
+
+        </div>
+
+
+        <div class="project-card">
+
+            <h3>Aura Telemed</h3>
+
+            <p>
+                An AI-powered telemedicine consultation portal with
+                symptom checking, consultation summaries and
+                appointment management.
+            </p>
+
+            <p>
+                Implemented Patient, Doctor and Admin portals with
+                authentication and role-based access control.
+            </p>
+
+            <div class="tech">
+                React.js · Node.js · Express.js · MongoDB · Gemini API
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- EXPERIENCE -->
+
+<section id="experience">
+
+    <div class="section-title">
+
+        <h2>Training & Experience</h2>
+
+        <p>
+            My professional learning journey
+        </p>
+
+    </div>
+
+
+    <div class="experience-card">
+
+        <h3>Web Development Training</h3>
+
+        <div class="date">
+            Lovely Professional University · Jul 2026
+        </div>
+
+        <p>
+            Built Aura Telemed, an AI-powered telemedicine platform.
+            Worked with React.js, Node.js, Express.js, MongoDB,
+            REST APIs and Google Gemini API.
+        </p>
+
+    </div>
+
+
+    <div class="experience-card">
+
+        <h3>Web Development Virtual Intern</h3>
+
+        <div class="date">
+            Skill Craft Technology · Sep 2025
+        </div>
+
+        <p>
+            Developed responsive web applications using HTML, CSS
+            and JavaScript while gaining experience with real-world
+            development workflows and Git/GitHub.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- CERTIFICATES -->
+
+<section>
+
+    <div class="section-title">
+
+        <h2>Certificates & Achievements</h2>
+
+    </div>
+
+
+    <div class="certificates">
+
+        <div class="certificate">
+            Web Development · Skill Craft
+        </div>
+
+        <div class="certificate">
+            Programming Using C++ · Infosys
+        </div>
+
+        <div class="certificate">
+            Python Basic · HackerRank
+        </div>
+
+        <div class="certificate">
+            CODE STORM Hackathon · 2024
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+    <h2>Let's Connect</h2>
+
+    <p>
+        Interested in working together or discussing technology?
+    </p>
+
+    <p>
+        📧
+        <a href="mailto:jithehslakkala2007@gmail.com">
+            jithehslakkala2007@gmail.com
+        </a>
+    </p>
+
+    <p>
+        📱 +91-8309053279
+    </p>
+
+    <p>
+        💼
+        <a href="https://www.linkedin.com/in/lakkala-jithesh"
+           target="_blank">
+            LinkedIn
+        </a>
+    </p>
+
+    <p>
+        🐙
+        <a href="https://github.com/jitheshl"
+           target="_blank">
+            GitHub
+        </a>
+    </p>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    © 2026 Lakkala Jithesh. All Rights Reserved.
+
+</footer>
+
+</body>
+</html>
